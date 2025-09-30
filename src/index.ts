@@ -8,6 +8,7 @@ const app = new Elysia()
   .use(jwt({ name: "jwt", secret: "secret" }))
   .get("/", () => "Hello World")
   .post("/api/user/signin", UserController.signIn)
+  .put("/api/user/update", UserController.update)
   .listen(3001);
 
 console.log(
